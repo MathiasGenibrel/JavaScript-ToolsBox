@@ -49,6 +49,7 @@ test(() => API.body("json", {}), "Empty Object data", false);
 test(() => API.body("text", {name: "John"}), "Bad data", false);
 test(() => API.body("text", ""), "Empty String data", false);
 test(() => API.body("text", "je suis bon"), "Raw data", true);
+test(() => API.body("text", "", true), "Empty body, with param = true", true);
 test(() => API.body("markdown", "<h1>MARKDOWN</h1>"), "markdown data", true);
 test(() => API.body("file", "img:base64"), "file data", true);
 
